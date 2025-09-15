@@ -120,4 +120,5 @@ void main() {
         writeln("Congratulations ", currentPlayer.name, ", you won!");
     else
         writeln("It's a tie :/");
+
 }
