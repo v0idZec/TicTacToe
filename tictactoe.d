@@ -3,8 +3,6 @@ import std.array;
 import std.conv;
 import core.exception;
 
-// TODO: make whole game in a class? + some improvements
-
 class PositionAlreadyUsed : Exception { this(string message) { super(message); } }
 class PositionNotInRange : Exception { this(string message) { super(message); } }
 
