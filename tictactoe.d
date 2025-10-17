@@ -10,7 +10,7 @@ struct Player {
     string name;
     string character;
 
-    private bool checkValidMove(const string[3][3] board, int[] pos) {
+    private bool checkValidMove(string[3][3] board, int[] pos) {
         try {
             return board[pos[0] - 1][pos[1] - 1] == "-";
         } catch (ArrayIndexError e) {
@@ -26,7 +26,7 @@ struct Player {
     }
 }
 
-int checkFreeSpaces(const string[3][3] board) {
+int checkFreeSpaces(string[3][3] board) {
     int freeSpaces = 9;
     foreach (row; board) 
         foreach (c; row) 
@@ -36,7 +36,7 @@ int checkFreeSpaces(const string[3][3] board) {
     return freeSpaces;
 }
 
-void printBoard(const string[3][3] board) {
+void printBoard(string[3][3] board) {
     foreach (l, c; board) {
         write(" ");
 
@@ -57,7 +57,7 @@ void switchPlayer(ref Player currentPlayer, Player p1, Player p2) {
         currentPlayer = p1;
 }
 
-bool checkWin(const string[3][3] board) {
+bool checkWin(string[3][3] board) {
     // vertical and horizontal win
     for (int i = 0; i < 3; ++i) {
         if (board[i][0] != "-" && (board[i][0] == board[i][1]) && (board[i][1] == board[i][2]))
